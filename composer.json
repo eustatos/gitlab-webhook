@@ -1,0 +1,19 @@
+{
+  "name": "eustatos/gitlab-webhook",
+  "description": "A GitLab webhook",
+  "keywords": ["PHP", "GitLab", "webhook"],
+  "homepage": "https://github.com/eustatos/gitlab-webhook",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "eustatos",
+      "email": "astsahkinav@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-4": { "Eustatos\\gitlab\\webhook\\": "" }
+  }
+}
