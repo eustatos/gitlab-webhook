@@ -5,4 +5,4 @@
        $_REQUEST['command'],
        'b2b pushed'
    );
-   $execution->getResult();
+   $execution->logResult('gitlab-webhook.log');
