@@ -3,11 +3,9 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 
 class EventTest extends PHPUnit_Framework_TestCase
 {
-    private $event;
-    
     public function setUp()
     {
-        $this->event = new Event(
+       $this->event = new Eustatos\gitlab\webhook\Event(
           'ls -la',
           'Gfhjkm123'
         );
@@ -16,12 +14,13 @@ class EventTest extends PHPUnit_Framework_TestCase
     {
         $this->event = NULL;
     }
-    public function testHelloWorld()
+    public function testEvent()
     {
-        $eventTest = new Event(
-          'ls -la',
+       $eventTest = new Eustatos\gitlab\webhook\Event(
+          'echo "test"',
           'b2b pushed'
         );
-        $this->assertEquals('ls -la', $eventTest->command);
+        $this->expectOutputString("Result execution: echo \"test\"\n0\n<pre>Array\n(\n    [0] => test\n)\n</pre>");
+        $eventTest->getResult();
     }
 }
