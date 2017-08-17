@@ -9,4 +9,6 @@ php:
   - nightly
 
 
-script: phpunit --configuration phpunit.xml --coverage-text
+script: 
+  composer dump-autoload -o
+  phpunit --configuration phpunit.xml --coverage-text
