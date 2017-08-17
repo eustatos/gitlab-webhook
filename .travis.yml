@@ -9,5 +9,8 @@ php:
  
 script: 
 - composer dump-autoload -o
-- phpunit --configuration phpunit.xml
+- phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
 
