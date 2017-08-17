@@ -11,5 +11,5 @@ php:
  
 script: 
 - composer dump-autoload -o
-- phpunit
+- phpunit --configuratio phpunit.xml
 
