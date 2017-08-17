@@ -1,4 +1,6 @@
 <?php
+require_once(__DIR__ . '/../vendor/autoload.php');
+
 class EventTest extends PHPUnit_Framework_TestCase
 {
     private $event;
