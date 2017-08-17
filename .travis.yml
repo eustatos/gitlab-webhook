@@ -8,6 +8,6 @@ php:
   - hhvm # on Trusty only
   - nightly
 
-
+script: ls -la 
 script: composer dump-autoload -o
-script: phpunit --configuration phpunit.xml --coverage-text
+
