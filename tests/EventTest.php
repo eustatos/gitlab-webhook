@@ -18,7 +18,7 @@ class EventTest extends PHPUnit_Framework_TestCase
     {
         $eventTest = new Event(
           'ls -la',
-          'Gfhjkm123'
+          'b2b pushed'
         );
         $this->assertEquals('ls -la', $eventTest->command);
     }
