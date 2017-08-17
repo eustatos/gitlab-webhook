@@ -9,6 +9,7 @@ php:
   - nightly
 
  
-script: composer dump-autoload -o
-script: phpunit
+script: 
+- composer dump-autoload -o
+- phpunit
 
