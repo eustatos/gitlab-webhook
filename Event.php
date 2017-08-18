@@ -20,7 +20,6 @@ class Event
      * @param string $command
      * @param  string $password
      * @access public
-     * @return void
      */
     public function __construct($command, $password)
     {
