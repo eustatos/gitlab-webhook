@@ -48,7 +48,7 @@ class Event
         echo 'Result execution: ' . $this->_command . PHP_EOL
         . $this->_result . PHP_EOL;
         echo '<pre>';
-            foreach($this->_output as $outputString) {
+            foreach ($this->_output as $outputString) {
                 echo $outputString . '<br>';
             }
         echo '</pre>';
