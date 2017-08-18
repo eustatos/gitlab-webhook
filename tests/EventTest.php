@@ -7,7 +7,8 @@ class EventTest extends PHPUnit_Framework_TestCase
     {
        $this->event = new Eustatos\gitlab\webhook\Event(
           'ls -la',
-          'Gfhjkm123'
+          'Gfhjkm123',
+           $_SERVER
         );
     }
     public function tearDown()
@@ -18,7 +19,8 @@ class EventTest extends PHPUnit_Framework_TestCase
     {
        $eventTest = new Eustatos\gitlab\webhook\Event(
           'echo "test"',
-          'b2b pushed'
+          'b2b pushed',
+           $_SERVER
         );
         $this->expectOutputString("Result execution: echo \"test\"\n0\n<pre>Array\n(\n    [0] => test\n)\n</pre>");
         $eventTest->getResult();
