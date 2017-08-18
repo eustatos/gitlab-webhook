@@ -3,7 +3,7 @@
   "description": "A GitLab webhook",
   "keywords": ["PHP", "GitLab", "webhook"],
   "homepage": "https://github.com/eustatos/gitlab-webhook",
-  "license": "GPLv2",
+  "license": "GPL-2.0",
   "authors": [
     {
       "name": "eustatos",
