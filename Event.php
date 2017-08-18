@@ -1,12 +1,12 @@
 <?php
-   namespace Eustatos\gitlab\webhook;
+    namespace Eustatos\gitlab\webhook;
 
-   /**
-    * Event
-    *
-    * @package Eustatos\gitlab\webhook
-    * @author  Alexander Astashkin <astashkinav@gmail.com>
-    */
+    /**
+     * Event
+     *
+     * @package Eustatos\gitlab\webhook
+     * @author  Alexander Astashkin <astashkinav@gmail.com>
+     */
 class Event
 {
     private $_command;
@@ -18,8 +18,6 @@ class Event
      * __construct
      *
      * @param string $command
-     * @param array  $output
-     * @param int    $result
      * @param  string $password
      * @access public
      * @return void
@@ -48,8 +46,8 @@ class Event
         echo 'Result execution: ' . $this->_command . PHP_EOL
         . $this->_result . PHP_EOL;
         echo '<pre>';
-         print_r($this->_output);
-         echo '</pre>';
+            print_r($this->_output);
+            echo '</pre>';
     }
 
     /**
@@ -82,7 +80,7 @@ class Event
         $contentType = isset($_SERVER['CONTENT_TYPE'])
             ? trim($_SERVER['CONTENT_TYPE'])
             : '';
-        if (strcasecmp($contentType, 'application/json') !=0 ) {
+        if (strcasecmp($contentType, 'application/json') != 0) {
             throw new Exception('Content type must be: application/json');
         }
         $jsonRequest = trim(file_get_contents('php://input'));
