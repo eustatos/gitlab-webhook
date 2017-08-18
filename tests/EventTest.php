@@ -22,7 +22,7 @@ class EventTest extends PHPUnit_Framework_TestCase
           'b2b pushed',
            $_SERVER
         );
-        $this->expectOutputString("Result execution: echo \"test\"\n0\n<pre>Array\n(\n    [0] => test\n)\n</pre>");
+        $this->expectOutputString("Result execution: echo \"test\"\n0\n<pre>test<br></pre>");
         $eventTest->getResult();
     }
 }
