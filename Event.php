@@ -79,18 +79,18 @@ class Event
     public function logRequest($file)
     {
         if (strcasecmp($this->_server['REQUEST_METHOD'], 'POST') != 0) {
-            throw new Exception('Request method must be POST!');
+            throw new \Exception('Request method must be POST!');
         }
         $contentType = isset($this->_server['CONTENT_TYPE'])
             ? trim($this->_server['CONTENT_TYPE'])
             : '';
         if (strcasecmp($contentType, 'application/json') != 0) {
-            throw new Exception('Content type must be: application/json');
+            throw new \Exception('Content type must be: application/json');
         }
         $jsonRequest = trim(file_get_contents('php://input'));
         $jsonRequest = json_decode($jsonRequest, true);
         if (!is_array($jsonRequest)) {
-            throw new Exception('Received content conteined invalid JSON');
+            throw new \Exception('Received content conteined invalid JSON');
         }
         $this->writeToFile(
             $file,
