@@ -49,7 +49,7 @@ class Event
         . $this->_result . PHP_EOL;
         echo '<pre>';
             foreach($outputString as $this->_ouput) {
-                echo $outputString . '<br>'
+                echo $outputString . '<br>';
             }
         echo '</pre>';
     }
