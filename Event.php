@@ -48,8 +48,10 @@ class Event
         echo 'Result execution: ' . $this->_command . PHP_EOL
         . $this->_result . PHP_EOL;
         echo '<pre>';
-            print_r($this->_output);
-            echo '</pre>';
+            foreach($outputString as $this->_ouput) {
+                echo $outputString . '<br>'
+            }
+        echo '</pre>';
     }
 
     /**
