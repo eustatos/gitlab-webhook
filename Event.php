@@ -12,6 +12,7 @@ class Event
     private $_command;
     private $_output = [];
     private $_result;
+    private $_server;
     const TOKEN = 'b2b pushed';
 
     /**
@@ -19,11 +20,13 @@ class Event
      *
      * @param string $command
      * @param  string $password
+     * $param array $server
      * @access public
      */
-    public function __construct($command, $password)
+    public function __construct($command, $password, $server)
     {
         $this->_command = $command;
+        $this->_server = $server;
 
         if ($password == self::TOKEN) {
             exec(
@@ -73,11 +76,11 @@ class Event
      */
     public function logRequest($file)
     {
-        if (strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0) {
+        if (strcasecmp($this->_server['REQUEST_METHOD'], 'POST') != 0) {
             throw new Exception('Request method must be POST!');
         }
-        $contentType = isset($_SERVER['CONTENT_TYPE'])
-            ? trim($_SERVER['CONTENT_TYPE'])
+        $contentType = isset($this->_server['CONTENT_TYPE'])
+            ? trim($this->_server['CONTENT_TYPE'])
             : '';
         if (strcasecmp($contentType, 'application/json') != 0) {
             throw new Exception('Content type must be: application/json');
